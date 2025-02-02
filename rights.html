@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Rights Game</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+	<link rel="shortcut icon" href="assets/img/favicon.ico" />
+</head>
+<body>
+    <header>
+        <a href="index.html" class="nav-logo"> <img src="assets/img/small_logo.png" alt="Logo" class="logo"> </a>
+        <nav class="navbar">
+            <a href="index.html">Introduction</a>
+            <a href="scope.html">Scope</a>
+            <a href="definitions.html">Definitions</a>
+            <a href="principles.html">Principles</a>
+            <a href="rights.html">Rights</a>
+			<a href="challenges.html">Challenges</a>
+            <a href="about.html">About</a>
+			<a class="link" href="https://xdalle.github.io/5L2FGuide-PT-BR-/rights.html">PT-BR</a>
+        </nav>
+    </header>
+
+    <main>
+		<div class="centered-container">
+			<h2 class="select-info" id="select-info">Select which <strong>Rights</strong> your organization needs to comply with.</h2>
+			<h2 class="select-info" id="selected-info" style="display:none;">You have selected the following <strong>Rights</strong> for compliance:</h2>
+
+			<div class="circle-container" id="circle-container">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+				<div class="circle"></div>
+				<div class="circle"></div>
+				<div class="circle"></div>
+				<div class="circle"></div>
+				<div class="circle"></div>
+            </div>
+
+			<button class="assert-button" id="assert-button">Check</button>
+			<button class="play-again-button" id="play-again-button">Play Again</button>
+		</div>
+        <div id="cards-container">
+        </div>
+		<div id="results" class="results-container"></div>
+
+    </main>
+
+    <footer class="footer">
+        <p><a href="http://creativecommons.org/licenses/by/4.0/" rel="license"><img style="border-width: 0;" src="https://i.creativecommons.org/l/by/4.0/80x15.png" alt="Creative Commons License" /><br />
+        </a><br />
+            Unless otherwise stated, the contents are licensed under
+          <a href="http://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 &#8211; International</a>. 
+          The authors are responsible for the choice and presentation of their texts on this site and for the opinions expressed. <a class="link" href="https://github.com/xDalle/5L2FGuide">Source</a>.</p>
+    </footer>
+
+    <script>
+		const assertButton = document.getElementById('assert-button');
+		const selectInfo = document.getElementById('select-info');
+
+		const circleContainer = document.getElementById('circle-container');
+		const circles = circleContainer.getElementsByClassName('circle');
+
+		assertButton.classList.add('disabled');
+		assertButton.disabled = true;
+
+		const principles = [
+			"#1 Minimized collection",
+			"#2 Confirmation of the existence of treatment",
+			"#3 Data access",
+			"#4 Data correction",
+			"#5 Anonymization",
+			"#6 Data portability",
+			"#7 Data deletion",
+			"#8 Information from participating entities",
+			"#9 Information about the possibility of not consenting",
+			"#10 Revocation of consent",
+			"#11 Dispute",
+			"#12 Purpose-consistent processing",
+			"#13 Consistent retention with purpose",
+			"#14 Opposition to automated decision making",
+			"#15 Processing restriction",
+		];
+
+		const subtitles = [
+			"\"only the necessary personal data for specific purposes should be collected, ensuring no excess data is gathered.\"",
+			"\"individuals have the right to know whether their personal data is being processed.\”",
+			"\"individuals can request access to their personal data held by organizations.\”",
+			"\"individuals have the right to request corrections to inaccurate or incomplete personal data.\”",
+			"\"data can be anonymized, ensuring that it cannot be traced back to an individual.\”",
+			"\"individuals can request their data in a structured format to transfer it to another service.\”",
+			"\"individuals can request the deletion of their personal data, especially when it is no longer necessary.\”",
+			"\"individuals should be informed about other entities involved in processing their data.\”",
+			"\"individuals must be informed that they can withhold or withdraw consent without negative consequences.\”",
+			"\"individuals can revoke previously given consent for data processing at any time.\”",
+			"\"individuals have the right to dispute or challenge any decisions related to the processing of their personal data.\”",
+			"\"data should only be processed in ways that align with the original purpose for which it was collected.\”",
+			"\"personal data should be kept only for as long as necessary to fulfill its intended purpose.\”",
+			"\"individuals can oppose decisions made purely based on automated processes, especially when it affects them significantly.\”",
+			"\"individuals can request restrictions on the processing of their data under certain circumstances.\”"
+		];
+
+		const infos = [
+			"• GDPR equivalent: <span>&#9989</span> Data Minimization (it is a Principle!)<br><br>• ADPPA equivalent: <span>&#9989</span> Data Minimization<br><br>• Privacy Act equivalent: <span>&#9989</span> Collection of solicited personal information (it is a Principle!)<br><br>• CCPA equivalent: <span>&#9989</span> Right to Limit Use and Disclosure of Sensitive Personal Information (at the request of the data subject only)",
+			"• GDPR equivalent: <span>&#9989</span> Right of access by the data subject<br><br>• ADPPA equivalent: <span>&#10060</span><br><br>• Privacy Act equivalent: <span>&#9989</span> Access to personal data (it is a Principle!)<br><br>• CCPA equivalent: <span>&#9989</span> Right to Know What Personal Information is Being Collected. Right to Access Personal Information",
+			"• GDPR equivalent: <span>&#9989</span> Right of access by the data subject<br><br>• ADPPA equivalent: <span>&#9989</span> Right to Access<br><br>• Privacy Act equivalent: <span>&#9989</span> Right to Access<br><br>• CCPA equivalent: <span>&#9989</span> Right to Know What Personal Information is Being Collected. Right to Access Personal Information",
+			"• GDPR equivalent: <span>&#9989</span> Right to rectification<br><br>• ADPPA equivalent: <span>&#9989</span> Right to Correct<br><br>• Privacy Act equivalent: <span>&#9989</span> Right to Correct<br><br>• CCPA equivalent: <span>&#9989</span> Right to Correct Inaccurate Personal Information",
+			"• GDPR equivalent: <span>&#9989</span> Pseudonymisation<br><br>• ADPPA equivalent: <span>&#10060</span><br><br>• Privacy Act equivalent: <span>&#9989</span> Anonymity and pseudonymity (it is a Principle!)<br><br>• CCPA equivalent: <span>&#10060</span>",
+			"• GDPR equivalent: <span>&#9989</span> Right to data portability<br><br>• ADPPA equivalent: <span>&#9989</span> Right to Portability<br><br>• Privacy Act equivalent: <span>&#10060</span><br><br>• CCPA equivalent: <span>&#9989</span> Right to Know What Personal Information is Being Collected. Right to Access Personal Information",
+			"• GDPR equivalent: <span>&#9989</span> Right to erasure<br><br>• ADPPA equivalent: <span>&#9989</span> Right to Delete<br><br>• Privacy Act equivalent: <span>&#10060</span><br><br>• CCPA equivalent: <span>&#9989</span> Right to Delete Personal Information",
+			"• GDPR equivalent: <span>&#9989</span> Information to be provided where personal data are collected from the data subject<br><br>• ADPPA equivalent: <span>&#9989</span> Right of Transparency<br><br>• Privacy Act equivalent: <span>&#9989</span> Open and transparent management of personal information (it is a Principle!)<br><br>• CCPA equivalent: <span>&#9989</span> Right to Know What Personal Information is Sold or Shared and to Whom",
+			"• GDPR equivalent: <span>&#9989</span> Right to withdraw<br><br>• ADPPA equivalent: <span>&#9989</span> Right of Transparency (in case of changes in the terms of consent only)<br><br>• Privacy Act equivalent: <span>&#10060</span><br><br>• CCPA equivalent: <span>&#9989</span> Right to Opt Out of Sale or Sharing of Personal Information",
+			"• GDPR equivalent: <span>&#9989</span> Right to withdraw<br><br>• ADPPA equivalent: <span>&#9989</span> Right to Consent and Object<br><br>• Privacy Act equivalent: <span>&#9989</span> Collection of solicited personal information / Use or disclosure of personal information (it is a Principle!)<br><br>• CCPA equivalent: <span>&#9989</span> Right to Opt Out of Sale or Sharing of Personal Information",
+			"• GDPR equivalent: <span>&#9989</span> Right to contest / Right to lodge a complaint with a supervisory authority<br><br>• ADPPA equivalent: <span>&#9989</span> Right to Consent and Object<br><br>• Privacy Act equivalent: <span>&#10060</span><br><br>• CCPA equivalent: <span>&#9989</span> Right to Opt Out of Sale or Sharing of Personal Information",
+			"• GDPR equivalent: <span>&#9989</span> Storage limitation (it is a Principle!)<br><br>• ADPPA equivalent: <span>&#9989</span> Data Minimization<br><br>• Privacy Act equivalent: <span>&#9989</span> Use or disclosure of personal information (it is a Principle!)<br><br>• CCPA equivalent: <span>&#9989</span> Right to Know What Personal Information is Being Collected. Right to Access Personal Information",
+			"• GDPR equivalent: <span>&#9989</span> Storage limitation (it is a Principle!)<br><br>• ADPPA equivalent: <span>&#9989</span> Data Retention policies<br><br>• Privacy Act equivalent: <span>&#9989</span> Security of personal information (it is a Principle!)<br><br>• CCPA equivalent: <span>&#10060</span>",
+			"• GDPR equivalent: <span>&#9989</span> Automated individual decision-making, including profiling<br><br>• ADPPA equivalent: <span>&#10060</span><br><br>• Privacy Act equivalent: <span>&#10060</span><br><br>• CCPA equivalent: <span>&#10060</span>",
+			"• GDPR equivalent: <span>&#9989</span> Right to restriction of processing<br><br>• ADPPA equivalent: <span>&#10060</span><br><br>• Privacy Act equivalent: <span>&#10060</span><br><br>• CCPA equivalent: <span>&#9989</span> Right to Limit Use and Disclosure of Sensitive Personal Information"
+		];
+
+		const pbDMessages = [
+			"Minimized collection = Proactive not Reactive; Preventative not Remedial: This principle emphasizes the need for proactive measures to protect privacy, rather than reactive ones; Privacy as the Default Setting: This principle ensures that the default configuration of any system is privacy-friendly; Privacy Embedded into Design: Privacy should be integrated into the design and architecture of information systems and business practices.",
+			"Confirmation of the existence of treatment = Visibility and Transparency: Organizations should make their data practices transparent to users.",
+			"Data access = Visibility and Transparency: Organizations should make their data practices transparent to users.",
+			"",
+			"",
+			"Data portability = Respect for User Privacy: Organizations should respect and uphold users' privacy throughout the data lifecycle.",
+			"",
+			"Information from participating entities = Visibility and Transparency: Organizations should make their data practices transparent to users.",
+			"Information about the possibility of not consenting = Visibility and Transparency: Organizations should make their data practices transparent to users.",
+			"Revocation of consent = Proactive not Reactive; Preventative not Remedial: This principle emphasizes the need for proactive measures to protect privacy, rather than reactive ones; Respect for User Privacy: Organizations should respect and uphold users' privacy throughout the data lifecycle.",
+			"Dispute = Respect for User Privacy: Organizations should respect and uphold users' privacy throughout the data lifecycle.",
+			"Purpose-consistent processing = Privacy as the Default Setting: This principle ensures that the default configuration of any system is privacy-friendly.",
+			"Consistent retention with purpose = Respect for User Privacy: Organizations should respect and uphold users' privacy throughout the data lifecycle.",
+			"Opposition to automated decision-making: Respect for User Privacy: Organizations should respect and uphold users' privacy throughout the data lifecycle.",
+			"Processing restriction = Proactive not Reactive; Preventative not Remedial: This principle emphasizes the need for proactive measures to protect privacy, rather than reactive ones."
+		];
+
+		const isoMessages = [
+			"Minimized collection = Data minimization: Personal data collected should be limited to what is necessary for the specified purposes, ensuring that excessive or irrelevant information is not gathered.",
+			"Confirmation of the existence of treatment = Openness, transparency and notice: Individuals should have access to clear information about how their data is being collected and processed, promoting transparency in data handling practices.",
+			"Data access = Individual participation and access: Individuals should have the right to access their personal data held by organizations and be able to participate in decisions regarding its use.",
+			"Data correction = Individual participation and access: Individuals should have the right to access their personal data held by organizations and be able to participate in decisions regarding its use.",
+			"Anonymization = Use, retention and disclosure limitation: Organizations should limit the use of personal data to the purposes for which it was originally collected.",
+			"Data portability = Use, retention and disclosure limitation: Organizations should limit the use of personal data to the purposes for which it was originally collected.",
+			"Data deletion = Individual participation and access: Individuals should have the right to access their personal data held by organizations and be able to participate in decisions regarding its use.",
+			"Information from participating entities = Openness, transparency and notice: Individuals should have access to clear information about how their data is being collected and processed, promoting transparency in data handling practices.",
+			"Information about the possibility of not consenting = Consent and choice: Organizations must obtain informed consent from individuals before collecting or processing their personal data.",
+			"Revocation of consent = Consent and choice: Organizations must obtain informed consent from individuals before collecting or processing their personal data.",
+			"Dispute = Accountability: Organizations are responsible for ensuring compliance with data privacy standards and must be able to demonstrate accountability in their data processing activities.",
+			"Purpose-consistent processing = Collection limitation: Organizations should limit the collection of personal data to what is strictly necessary for the specified purpose, avoiding unnecessary data collection.",
+			"Consistent retention with purpose = Use, retention and disclosure limitation: Organizations should limit the use of personal data to the purposes for which it was originally collected.",
+			"",
+			""
+		];
+
+		const pbDPrinciples = [1, 2, 3, 6, 8, 9, 10, 11, 12, 13, 14, 15];
+		const isoPrinciples = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+
+		const combinedPrinciples = [...new Set([...pbDPrinciples, ...isoPrinciples])];
+
+		const cardsContainer = document.getElementById('cards-container');
+		let selectedCards = [];
+
+		function updateButtonState() {
+			if (selectedCards.length > 0) {
+				assertButton.classList.remove('disabled');
+				assertButton.classList.add('enabled');
+				assertButton.disabled = false;
+			} else {
+				assertButton.classList.remove('enabled');
+				assertButton.classList.add('disabled');
+				assertButton.disabled = true;
+			}
+
+			for (let i = 0; i < circles.length; i++) {
+				if (selectedCards.includes(i)) {
+					circles[i].classList.add('filled');
+				} else {
+					circles[i].classList.remove('filled');
+				}
+			}
+		}
+
+		function createCards() {
+			principles.forEach((principle, index) => {
+				const card = document.createElement('div');
+				card.className = 'card';
+				
+				const [title] = principle.split(': ');
+				
+				const cardTitle = document.createElement('div');
+				cardTitle.className = 'card-title';
+				cardTitle.textContent = title;
+
+				const cardSubtitle = document.createElement('div');
+				cardSubtitle.className = 'card-subtitle';
+				cardSubtitle.textContent = subtitles[index];
+
+				const cardText = document.createElement('div');
+				cardText.className = 'card-text';
+				cardText.innerHTML = infos[index];
+
+				card.appendChild(cardTitle);
+				card.appendChild(cardSubtitle);
+				card.appendChild(cardText);
+
+				card.addEventListener('click', () => {
+					card.classList.toggle('selected');
+					if (selectedCards.includes(index)) {
+						selectedCards.splice(selectedCards.indexOf(index), 1);
+					} else {
+						selectedCards.push(index);
+					}
+					updateButtonState();                
+				});
+
+				cardsContainer.appendChild(card);
+			});
+		}
+
+		function displayResults() {
+			const selectedPrinciples = selectedCards.map(index => index + 1);
+			const totalSelected = selectedPrinciples.length;
+
+			const selectedPbDCount = selectedPrinciples.filter(p => pbDPrinciples.includes(p)).length;
+			const selectedISOCount = selectedPrinciples.filter(p => isoPrinciples.includes(p)).length;
+
+			const pbDPercentage = totalSelected > 0 ? ((selectedPbDCount / totalSelected) * 100).toFixed(2) : 0;
+			const isoPercentage = totalSelected > 0 ? ((selectedISOCount / totalSelected) * 100).toFixed(2) : 0;
+
+			const pbDFound = selectedPrinciples.filter(p => pbDPrinciples.includes(p));
+			const pbDNotFound = selectedPrinciples.filter(p => !pbDPrinciples.includes(p));
+			
+			const isoFound = selectedPrinciples.filter(p => isoPrinciples.includes(p));
+			const isoNotFound = selectedPrinciples.filter(p => !isoPrinciples.includes(p));
+			
+			const combinedFound = selectedPrinciples.filter(p => combinedPrinciples.includes(p));
+			
+			const pbDMessagesFound = pbDFound.map(index => pbDMessages[index - 1]);
+			const isoMessagesFound = isoFound.map(index => isoMessages[index - 1]);
+
+			const selectedCombinedCount = selectedPrinciples.filter(p => combinedPrinciples.includes(p)).length;
+			const combinedPercentage = totalSelected > 0 ? ((selectedCombinedCount / totalSelected) * 100).toFixed(2) : 0;
+
+			return { 
+				pbDPercentage, 
+				isoPercentage, 
+				combinedPercentage, 
+				pbDFound, 
+				pbDNotFound, 
+				isoFound, 
+				isoNotFound,
+				combinedFound,
+				pbDMessagesFound,
+				isoMessagesFound
+			};
+		}
+
+		document.getElementById('assert-button').addEventListener('click', () => {
+			if (selectedCards.length > 0) {
+				const resultsDisplay = document.getElementById('results');
+				const selectInfo = document.querySelector('.select-info');
+
+				resultsDisplay.style.visibility = 'visible';
+
+				document.getElementById('select-info').style.display = 'none';
+				document.getElementById('selected-info').style.display = 'block';
+
+				if (resultsDisplay) {
+					resultsDisplay.innerHTML = '';
+				} else {
+					resultsDisplay = document.createElement('div');
+					resultsDisplay.id = 'results';
+					document.body.appendChild(resultsDisplay);
+				}
+
+				cardsContainer.innerHTML = '';
+				selectedCards.sort((a, b) => a - b);
+
+				selectedCards.forEach(index => {
+					const card = document.createElement('div');
+					card.className = 'card selected';
+
+					const title = principles[index];
+					const subtitle = subtitles[index];
+					const content = infos[index];
+					card.innerHTML = `
+						<div class="card-title">${title}</div>
+						<div class="card-subtitle">${subtitle}</div>
+						<div class="card-text">${content}</div>
+					`;
+
+					cardsContainer.appendChild(card);
+				});
+
+				const { 
+					pbDPercentage, 
+					isoPercentage, 
+					combinedPercentage, 
+					pbDFound, 
+					pbDNotFound, 
+					isoFound, 
+					isoNotFound,
+					combinedFound,
+					pbDMessagesFound,
+					isoMessagesFound
+				} = displayResults();
+
+				resultsDisplay.innerHTML = `
+                    <h3>Results of the selected <strong>Rights</strong>:</h3>
+                    <div class="principles-list">Privacy by Design: ${pbDPercentage}%</div>
+					<div class="principles-found"><span>&#9989;</span> Rights found (Privacy by Design): <strong>{${pbDFound.join(', ')}}</strong></div>
+                    ${pbDMessagesFound.length > 0 ? `<div class="principles-equivalence"><strong>Equivalence on Privacy by Design:</strong> <br><br> <span>&#9989</span> ${pbDMessagesFound.join('<br> <span>&#9989</span> ')}</div>` : ''}
+					<br>
+                    <div class="principles-list">ISO/IEC 29100: ${isoPercentage}%</div>
+					<div class="principles-found"><span>&#9989;</span> Rights found (ISO/IEC 29100): <strong>{${isoFound.join(', ')}}</strong></div>
+					${isoMessagesFound.length > 0 ? `<div class="principles-equivalence"><strong>Equivalence on ISO/IEC 29100:</strong> <br><br> <span>&#9989</span> ${isoMessagesFound.join('<br> <span>&#9989</span> ')}</div>` : ''}
+					<br>
+					<div class="principles-list">Combined frameworks: ${combinedPercentage}%</div>
+					<div class="principles-found"><span>&#9989;</span> Rights found (Combined): <strong>{${combinedFound.join(', ')}}</strong></div>
+                `;
+
+				document.getElementById('selected-info').style.display = 'block';
+				document.getElementById('select-info').style.display = 'none';
+
+				document.getElementById('play-again-button').style.display = 'inline-block';
+				document.getElementById('assert-button').style.display = 'none';
+
+			}		
+		});
+
+		document.getElementById('play-again-button').addEventListener('click', () => {
+			cardsContainer.innerHTML = '';
+			selectedCards = [];
+			
+			document.getElementById('assert-button').style.display = 'inline-block';
+			document.getElementById('play-again-button').style.display = 'none';
+
+			const resultsDisplay = document.getElementById('results');
+			resultsDisplay.innerHTML = '';
+			resultsDisplay.style.visibility = 'hidden';
+
+			document.getElementById('select-info').style.display = 'block';
+			document.getElementById('selected-info').style.display = 'none';
+
+			const selectInfo = document.querySelector('.select-info');
+			selectInfo.style.visibility = 'visible';
+
+			createCards();
+			updateButtonState();
+		});
+
+		createCards();
+		updateButtonState();
+	</script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Compliance Guide</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+	<link rel="shortcut icon" href="assets/img/favicon.ico" />
+</head>
+<body>
+    <header>
+        <a href="index.html" class="nav-logo"> <img src="assets/img/small_logo.png" alt="Logo" class="logo"> </a>
+        <nav class="navbar">
+			<a href="index.html">Introduction</a>
+			<a href="scope.html">Scope</a>
+			<a href="definitions.html">Definitions</a>
+			<a href="principles.html">Principles</a>
+			<a href="rights.html">Rights</a>
+            <a href="challenges.html">Challenges</a>
+			<a href="about.html">About</a>
+			<a class="link" href="https://xdalle.github.io/5L2FGuide-PT-BR-/index.html">PT-BR</a>
+		</nav>
+    </header>
+
+    <main>
+        <div class="carousel">
+            <div class="carousel-content">
+                <button id="prev" class="carousel-button">❮</button>
+                <div class="carousel-text" id="carousel-text"></div>
+                <button id="next" class="carousel-button">❯</button>
+             </div>
+        </div>
+
+        <section class="introduction">
+            <h2 class="intro-title" id="introduction">Introduction</h2>
+            <p class="intro-paragraph">
+                <p>The purpose of this guide is to offer insights into how organizations should evaluate their respective <span title=' Adhering to laws, regulations, and guidelines relevant to data protection and privacy.'><span class='highlight'>compliance</span></span> with a few noteworthy <span title='Regulations or frameworks that establish requirements for the protection of personal data.'><span class='highlight'>data protection standards</span></span>, such as ISO/IEC 29100 and the concept of Privacy by Design, including best practices from literature and industry.</p>
+                <p>Understanding how teams or organizations face a compliance one can serve as a very basic pragmatic tool that assumes a unified integration among frameworks that stand in favor of the creation of a far more uniform set of privacy guidelines while directly supporting compliance with privacy laws.</p>
+                <p>However, organizations often encounter significant challenges in achieving this compliance. Common obstacles, such as budget constraints and ambiguity in legal requirements, can hinder progress and complicate the implementation of effective privacy frameworks. This guide aims not only to outline best practices but also to address these challenges head-on, providing organizations with practical strategies to enhance their compliance efforts.</p>
+                <p>The guide is divided into sections like <strong>Scope</strong> and <strong>Definitions</strong>, and provides a detailed explanation of the key terms of privacy and the varieties of coverage of privacy legislation. Also, the <strong>Principles</strong> and <strong>Rights</strong> sections dive into specific commands present in the personal data protection laws, such as their descriptions (based on the LGPD), their equivalence in other laws and evaluate how well ISO/IEC 29100 and Privacy by Design frameworks are capable of addressing these <span title='Specific conditions or events that require compliance with privacy laws.'><span class='highlight'>legal triggers</span></span>.</p>
+                <p>Also, the user has been provided with the relevant information in the interactive version of the <strong>Principles</strong> and <strong>Rights</strong> section through a game wherein cards symbolizing different guidelines are selected. As each guideline is selected, results are given that guide how well the specific frameworks satisfy the legal requirements, by their percentage coverage.</p>
+                <p>This game is set up such that users can compare which framework bodes the best between ISO/IEC 29100, Privacy by Design, or both to meet compliance goals. With card selection limited to only those most pertinent, teams can steer their approaches toward privacy while ensuring compliance with particular organizational stipulations. This makes the user practically aware of drawing connections between the standards and paying attention to how complying with privacy guidelines is organized and enacted. Also, there is a running example in the <strong>About</strong> section.</p>
+                <p>By recognizing and addressing the multifaceted challenges organizations face in personal data protection compliance, this guide serves as a comprehensive resource for development teams seeking to navigate the complexities of privacy regulations effectively. Finally, by referencing well-known standards and weaving in a human-interest angle, we believe the document provides a sound vehicle for development groups to wrap their heads around the topic of data privacy and regulation in the context of business practices.</p>
+                <p>This guide aims to support organizations of <strong>various</strong> sizes in navigating data privacy regulations, providing essential practices without delving into extensive technical details or sector-specific nuances.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>
+            <a href="http://creativecommons.org/licenses/by/4.0/" rel="license">
+                <img style="border-width: 0;" src="https://i.creativecommons.org/l/by/4.0/80x15.png" alt="Creative Commons License" /><br />
+            </a><br />
+            Unless otherwise stated, the contents are licensed under
+            <a href="http://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 &#8211; International</a>. 
+            The authors are responsible for the choice and presentation of their texts on this site and for the opinions expressed. 
+            <a class="link" href="https://github.com/xDalle/5L2FGuide">Source</a>.
+        </p>
+    </footer>
+
+    <script>
+        const texts = [
+            "<strong>General Data Protection Law (LGPD)</strong><br><br>The Brazilian regulation that elucidates the duty of adequate treatment of personal data by <span title='Entities that determine the purposes and means of processing personal data.'><span class='highlight'>controllers</span></span>, given the conditions. In effect since August 2020, the law seeks to ensure, within its <span title='Geographic area within which the law is applicable.'><span class='highlight'>territorial scope</span></span> of application, the integrity of data privacy for the entire Brazilian population, even if processing is not carried out in national territory, as long as the collection occurs. It is worth noting that, based on the European GDPR, the law was established to prevent new <span title='Incidents where unauthorized access to, or disclosure of, personal data occurs, leading to potential harm to individuals.'><span class='highlight'>data breaches</span></span>, given that previous Brazilian laws related to <span title='Any operation or set of operations performed on personal data, such as collection, storage, alteration, or sharing.'><span class='highlight'>data processing</span></span> did not succeed in fully ensuring the <span title='Legal measures and principles that safeguard individuals personal information from misuse or unauthorized access.'><span class='highlight'>protection of personal data</span></span>, including in the area of software development.",
+            "<strong>General Data Protection Regulation (GDPR)</strong><br><br>The GDPR arises from the need to prevent the increasing violation of <span title= 'Information that relates to an identified or identifiable individual, which is central to data protection laws.'><span class='highlight'>personal data</span></span> in the digital age, given the abrupt change in the context of privacy. Moreover, in force since May 2018, the regulation establishes a series of rules aimed at protecting the data of citizens residing in the European Union (EU) to prevent such data breaches. Furthermore, the GDPR is not limited to data processing within the EU territory but applies to any activity related to personal data as long as it belongs to residents, regardless of the country of origin where it is processed, with the application of <span title=' Penalties or enforcement actions taken against individuals or organizations for violating laws or regulations.'><span class='highlight'>administrative sanctions</span></span> in case of violations.",
+            "<strong>American Data Privacy and Protection Act (ADPPA)</strong><br><br>Regarding the United States of America (USA), the embryonic ADPPA was introduced in July 2022 as the first comprehensive data privacy bill in the country. Before the ADPPA, each state had the autonomy to designate privacy <span title=' Systems or guidelines set by states for managing data privacy.'><span class='highlight'>frameworks</span></span> to be followed and state legislations, such as the California data privacy law, that is, the renowned CCPA. A significant difference compared to Brazilian and European laws is that American laws place a greater emphasis on <span title='The principle that businesses have the right to operate with minimal regulation, often prioritizing business interests.'><span class='highlight'>corporate freedom</span></span>, meaning there is a stronger focus on business interests than on <span title='The rights of individuals regarding their personal data and privacy.'><span class='highlight'>individual rights</span></span>.",
+            "<strong>Australian Privacy Act</strong><br><br>Older than many, the Australian Privacy Act &#8212; 1988 &#8212; now imposes numerous <span title='Changes or additions made to the law over time, reflecting evolving privacy needs and technological advancements.'><span class='highlight'>amendments</span></span> since its inception, making the interpretation and implementation somewhat complicated in a contemporary technical setting. The law was written at a time when hardly any ceasefire was attended to developing privacy concerns against <span title='Process of converting information into a digital format.'><span class='highlight'>digitalization</span></span>, thus, requiring its constant modernizing all the way to this day by updates and amendments. The amendments are no less than one hundred and during the decades have found their ways into varied legislative updates, making the examination of the law an arduous task requiring careful analysis.",
+            "<strong>California Consumer Privacy Act (CCPA)</strong><br><br>As previously mentioned, the CCPA is a data protection law that predates the ADPPA, covering only the state of California. While it also has a similar focus on corporate freedom &#8212; as does its successor &#8212; it still has a more <span title='Specific boundaries and applicability of the law.'><span class='highlight'>limited scope</span></span>, applying only to specific organizations in California. It is important to be familiar with it, as, like the ADPPA, it does not have an <span title='A clear and defined part of the law that outlines guiding principles.'><span class='highlight'> explicit section on principles</span></span> and can help in better understanding the scope and <span title=' Underlying rules or guidelines that are not explicitly stated but can be inferred from the text of the law.'><span class='highlight'> implicit principles</span></span>.",
+            "<strong>Privacy by Design (PbD)</strong><br><br>Proposed by Ann Cavoukian in 2009, stands out as all the <span title='Fundamental rules or guidelines that govern privacy and data protection practices.'><span class='highlight'>principles</span></span> of existing legislations &#8212; discussed globally &#8212; are correlated with the principles of PbD itself. Thus, it is based on seven fundamental principles, which are used globally and facilitate the application of privacy and data protection, especially during <span title='Process of defining the architecture, components, interfaces, and other characteristics of software.'><span class='highlight'>software design</span></span>. In this way, these PbD schemes are often used in conjunction with local legislations, and moreover, some laws explicitly include PbD in their articles, such as the GDPR. This means that, in certain legislations, PbD is legally required to achieve compliance and, consequently, the privacy of personal data.",
+            "<strong>ISO/IEC 29100</strong><br><br>In 2011, the <span title=' International Organization for Standardization (ISO) and the International Electrotechnical Commission (IEC), which develop and publish international standards.'><span class='highlight'>ISO/IEC</span></span> Information Technology Task Force established privacy principles that, like PbD, are directly related to the principles and legal bases of the privacy legislations. This means that, in addition to reinforcing the parameters of the law, the framework can complement <span title='Recommendations or instructions that help organizations comply with privacy laws.'><span class='highlight'>guidelines</span></span> that are abundant in one piece of legislation but scarce in another. Thus, ISO/IEC 29100 &#8212; updated in 2020 for Brazilian standards &#8212; addresses principles based on the definition of Personally Identifiable Information (PII) or merely Personal Data (DP), which refers to personal information capable of identifying an individual. Therefore, the scope covered by the framework is as comprehensive as the legislations, applying to natural persons or any organizations involved in the processing of personal data, ranging from <span title='Stages in the lifecycle of data management.'><span class='highlight'> specification to development and subsequent maintenance</span></span>."
+        ];
+
+        let currentIndex = 0;
+
+        updateCarousel();
+
+        function updateCarousel() {
+            const carouselTextElement = document.getElementById('carousel-text');
+            
+            if (carouselTextElement.classList.contains('hidden')) {
+                carouselTextElement.classList.remove('hidden');
+            } else {
+                carouselTextElement.classList.add('hidden');
+
+                setTimeout(() => {
+                    carouselTextElement.innerHTML = texts[currentIndex];
+                    carouselTextElement.classList.remove('hidden');
+                }, 200);
+            }
+        }
+
+        function nextText() {
+            currentIndex = (currentIndex + 1) % texts.length;
+            updateCarousel();
+        }
+
+        function prevText() {
+            currentIndex = (currentIndex - 1 + texts.length) % texts.length;
+            updateCarousel();
+        }
+
+        document.getElementById('next').addEventListener('click', nextText);
+        document.getElementById('prev').addEventListener('click', prevText);
+
+        //setInterval(nextText, 3000); 
+        updateCarousel();
+    </script>
+</body>
+</html>

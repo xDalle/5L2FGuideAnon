@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Compliance Guide</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+	<link rel="shortcut icon" href="assets/img/favicon.ico" />
+</head>
+<body>
+    <header>
+        <a href="index.html" class="nav-logo"> <img src="assets/img/small_logo.png" alt="Logo" class="logo"> </a>
+        <nav class="navbar">
+            <a href="index.html">Introduction</a>
+            <a href="scope.html">Scope</a>
+            <a href="definitions.html">Definitions</a>
+            <a href="principles.html">Principles</a>
+            <a href="rights.html">Rights</a>
+            <a href="challenges.html">Challenges</a>
+            <a href="about.html">About</a>
+			<a class="link" href="https://xdalle.github.io/5L2FGuide-PT-BR-/challenges.html">PT-BR</a>
+        </nav>
+    </header>
+
+	<main>
+		<div class="carousel">
+			<a href="about.html" class="nav-logo"> <img src="assets/img/logo.png" alt="Logo Maior" class="large-logo"> </a>
+			<div class="scope-text">
+				<h2 class="scope-overview"><strong>Challenges Overview</strong></h2>
+				<p>This section addresses the significant <strong>challenges</strong> faced by organizations in ensuring compliance with data protection laws and the corresponding <strong>solutions</strong> that can be implemented to navigate these difficulties. Each challenge presents unique obstacles that can impact the development and deployment of software applications, yet many of these issues share common underlying themes. Key <strong>challenges</strong> discussed include budget constraints, ambiguity in legal requirements, and the need for effective frameworks to incorporate privacy by design. Additionally, proposed <strong>solutions</strong> aim to enhance organizational practices, improve compliance strategies, and foster a culture of data protection. By understanding these <strong>challenges</strong> and exploring actionable <strong>solutions</strong>, organizations can better align their processes with legal requirements while ensuring the protection of personal data.</p>
+			</div>
+		</div>
+        <section class="scope">
+			<ol>
+				<li class="scope-title"><strong>Lack of knowledge of the law</strong>
+					<ul class="item-group">
+						<li class="item-title"><strong>Description:</strong></li>
+						<li class="item-title2">This was the main challenge identified in the Systematic Literature Review (SLR), involving both a lack of awareness about the need to implement privacy in software and limited knowledge of existing legislation. While developers may have practical experience in privacy, they struggle to interpret legal requirements due to insufficient formal training on privacy and the LGPD.</li>
+						<li class="item-title"><strong>Solutions:</strong></li>
+						<li class="item-title2">Organizations have adopted specialized training programs and ongoing education for their development teams, which are crucial for ensuring compliance with the law and building a culture of privacy. A key solution is to establish a robust governance policy that includes regular training for all employees &#8212; especially new hires &#8212; on proper data handling practices and LGPD obligations.</li>
+					</ul>
+				</li>
+				<li class="scope-title"><strong>Lack of team with expertise</strong>
+					<ul class="item-group">
+						<li class="item-title"><strong>Description:</strong></li>
+						<li class="item-title2">Unlike the challenge of limited legal knowledge, this issue arises from the need for additional administrative staff and specialized Data Protection Officers (DPOs). Without a knowledgeable team, risk assessments for data protection may be ineffective, and compliance with the Brazilian LGPD may be incomplete.</li>
+						<li class="item-title"><strong>Solutions:</strong></li>
+						<li class="item-title2">A straightforward solution is appointing a DPO or hiring specialized consultants or legal teams for compliance validation. However, developers also suggested continuous training and awareness for existing staff handling data to address expertise gaps. Another innovative suggestion involves using Natural Language Processing to automatically detect sensitive data during processing, alerting responsible parties to potential compliance issues without requiring prior legal knowledge.</li>
+					</ul>
+				</li>
+				<li class="scope-title"><strong>Translating the law into a technical context</strong>
+					<ul class="item-group">
+						<li class="item-title"><strong>Description:</strong></li>
+						<li class="item-title2">Developers face challenges interpreting theoretical privacy norms that lack specific compliance techniques. This complexity makes it difficult to translate legal requirements into organizational practices, leaving many developers uncomfortable. They also struggle with data anonymization and automation processes. Frameworks like Privacy by Design and Privacy by Default are recommended.</li>
+						<li class="item-title"><strong>Solutions:</strong></li>
+						<li class="item-title2">Developers suggested using an Information Classification Policy for data cataloging and labeling, with open-source tools like Openmetadata and Datahub for assistance. It's essential to establish protection strategies, including cryptographic measures and data disposal, as mandated by the LGPD.</li>
+					</ul>
+				</li>
+				<li class="scope-title"><strong>Uncertainty of organizational processes</strong>
+					<ul class="item-group">
+						<li class="item-title"><strong>Description:</strong></li>
+						<li class="item-title2">Developers may not always be familiar with all organizational processes, complicating compliance with data protection legislation. This leads to challenges in data backup adequacy, auditing systems, and using cloud services, which depend on the physical location of data storage.</li>
+						<li class="item-title"><strong>Solutions:</strong></li>
+						<li class="item-title2">Organizations should implement access logs for data processing and choose cloud providers that ensure compliance with relevant laws. Establishing strong data governance with clear access controls is crucial. Centralizing data in a single application, rather than using departmental systems, and keeping detailed records of data handling operations can reduce uncertainty. Additionally, minimizing data collection and retention helps developers understand how and which data are utilized in the system.</li>
+					</ul>
+				</li>
+                <li class="scope-title"><strong>Lack of standardization of techniques/tools</strong>
+					<ul class="item-group">
+						<li class="item-title"><strong>Description:</strong></li>
+						<li class="item-title2">There's a lack of standardization and evaluation metrics for privacy practices, as the concept of privacy is volatile and varies by project. While there are taxonomies and frameworks for implementing privacy, there is no consensus on them, and existing legislation lacks specific guidelines on which technologies to use. Consequently, organizations must find tailored solutions for compliance. This challenge is compounded by the absence of standardized techniques, tools, or methodologies to ensure legal compliance.</li>
+						<li class="item-title"><strong>Solutions:</strong></li>
+						<li class="item-title2">Possible solutions include adhering to the guidelines of the application’s publishing platform and utilizing various technologies such as access control, SHA256 encryption, anonymization, private VPNs, and transparent consent management. Regular communication among team members, similar to Agile methodologies like Scrum, is crucial to keep everyone informed about recommended technologies and their specifics.</li>
+					</ul>
+				</li>
+                <li class="scope-title"><strong>Organizational structure</strong>
+					<ul class="item-group">
+						<li class="item-title"><strong>Description:</strong></li>
+						<li class="item-title2">There is often a communication gap between privacy specialists and software developers, which hinders proper privacy implementation in applications due to the absence of necessary codes of conduct. Organizations may impose limitations on employees, resulting in regulatory non-compliance. Effective knowledge management is crucial for internal organization and compliance with legislation.</li>
+						<li class="item-title"><strong>Solutions:</strong></li>
+						<li class="item-title2">Strategic communication projects, such as information systems plans or Data Privacy Institutional Programs, can help improve organizational culture. Additionally, proper governance and limited access to sensitive data are important. Implementing row-level security (RLS) can help determine which information to share, and architectures like Microsoft's Medallion Architecture can ease the friction between developers and privacy experts. Moreover, using mock data and restricting access to production databases can ensure compliance with LGPD, even across branches.</li>
+					</ul>
+				</li>
+                <li class="scope-title"><strong>Priorization of functional requirements</strong>
+					<ul class="item-group">
+						<li class="item-title"><strong>Description:</strong></li>
+						<li class="item-title2">Developers face challenges in prioritizing functional requirements, often due to factors such as system performance reduction, tight deadlines for effective security implementation, and the inherent difficulties of non-functional requirements. A tension exists between prioritizing functional requirements and ensuring security and privacy, complicating compliance with privacy legislation.</li>
+						<li class="item-title"><strong>Solutions:</strong></li>
+						<li class="item-title2">To address deadline pressures, automated testing can enhance the focus on non-functional requirements, while methods that facilitate quick application updates and effective feedback can motivate developers to improve both categories. Many developers emphasize considering privacy requirements from the project's inception, utilizing techniques such as the Privacy by Design framework, creating reusable architectural components, implementing low-cost practices like SHA256 encryption, using testing database population tools, and continuously mapping personal data. This approach ensures privacy is maintained throughout development.</li>
+					</ul>
+				</li>
+                <li class="scope-title"><strong>Difficulties with third-party services</strong>
+					<ul class="item-group">
+						<li class="item-title"><strong>Description:</strong></li>
+						<li class="item-title2">Many privacy issues arise from using third-party Software Development Kits (SDKs). Although an application may initially comply with privacy legislation, incorporating SDKs does not guarantee ongoing compliance, as many companies fail to scrutinize these contracts adequately. Developers face difficulties navigating the privacy implications of these libraries and understanding how they handle personal data.</li>
+						<li class="item-title"><strong>Solutions:</strong></li>
+						<li class="item-title2">Prioritizing libraries from reputable providers and minimizing data sharing with third parties to only what is absolutely necessary. It's crucial to ensure that all suppliers and partners comply with data protection regulations and to avoid transmitting sensitive information that isn't essential for processing. Additionally, thorough mapping of software and data &#8212; including documentation, system information, and third-party codes &#8212; is vital for developers to understand data usage and storage. Data security measures, such as encryption during storage, transit, and use, are also essential to mitigate risks associated with sharing information. Lastly, establishing internal protocols to verify the integrity and reliability of third-party libraries and software can further help prevent violations.</li>
+					</ul>
+				</li>
+                <li class="scope-title"><strong>Lack of security/privacy policy</strong>
+					<ul class="item-group">
+						<li class="item-title"><strong>Description:</strong></li>
+						<li class="item-title2">The creation of a consent form and a security policy remains a challenge often overlooked by organizations. Many companies lack documented security measures and do not have procedures for notifying authorities in case of personal data breaches. This issue may stem from developers as well, particularly when they use third-party libraries, which can hinder their understanding of the applications and prevent the proper development of a privacy policy.</li>
+						<li class="item-title"><strong>Solutions:</strong></li>
+						<li class="item-title2">Transparently drafting terms of use, reviewing legal bases to create an effective and up-to-date security policy, and employing techniques like Third-Party Tracking and API Configurations. Developers highlighted three key points for ensuring data security: database encryption, anonymization when necessary (and avoiding sensitive data when possible), and access control with permission management. With thorough mapping of collected data, organizations can review internal policies and assess risks and incident responses to ensure their security policy is robust and compliant with LGPD.</li>
+					</ul>
+				</li>
+                <li class="scope-title"><strong>Identification of privacy requirements</strong>
+					<ul class="item-group">
+						<li class="item-title"><strong>Description:</strong></li>
+						<li class="item-title2">Developers possess empirical knowledge of privacy, but identifying privacy requirements in relation to data protection legislation is complex. An ineffective assessment of these requirements leads to issues both in data collection &#8212; selecting unnecessary data for the software, which violates the principle of necessity &#8212; and in development, resulting in security flaws that may incur administrative penalties.</li>
+						<li class="item-title"><strong>Solutions:</strong></li>
+						<li class="item-title2">It is necessary to use tools such as user story specifications to facilitate the requirements analysis phase. In agile teams, employing Design Thinking tools during the requirements elicitation stage can also be beneficial. Mapping the data lifecycle (Data Inventory) helps in identifying and documenting all personal data and its flows, allowing for a deeper analysis of what is essential for the software's purposes and what can be discarded. Additionally, the compliance team plays a crucial role in mitigating this challenge, particularly when developers face difficulties with the theoretical aspects of the law.</li>
+					</ul>
+				</li>
+                <li class="scope-title"><strong>Ambiguity of the law</strong>
+					<ul class="item-group">
+						<li class="item-title"><strong>Description:</strong></li>
+						<li class="item-title2">Many developers struggle to comply with regulations when they are vague, complicating the extraction and implementation of legal requirements. When requirements are not expressed in clear and specific language, they can be interpreted in multiple ways, leading to a level of privacy that may not align with legislative intent.</li>
+						<li class="item-title"><strong>Solutions:</strong></li>
+						<li class="item-title2">Mapping privacy laws to privacy frameworks from the outset and utilizing design standards such as user-managed encryption keys and noise addition for data obfuscation. A practical immediate solution is to employ a prevention strategy for any data sets, emphasizing data minimization &#8212; collecting only the necessary data to achieve treatment goals &#8212; and masking and encrypting all data as effective methods for mitigating damage in the event of a breach.</li>
+					</ul>
+				</li>
+                <li class="scope-title"><strong>Shortage of guides/tools</strong>
+					<ul class="item-group">
+						<li class="item-title"><strong>Description:</strong></li>
+						<li class="item-title2">The ambiguity in privacy legislation and the challenges in translating these laws into a technical context highlight the need for guides and tools to aid compliance. However, developers in Brazil and Europe have reported a lack of specific guidelines for applying privacy in software contexts. Many developers struggle to find appropriate design guidelines, and when they do, the support is often inadequate for smaller companies.</li>
+						<li class="item-title"><strong>Solutions:</strong></li>
+						<li class="item-title2">Focusing on user experience and consulting professionals in the absence of dedicated resources. Additionally, specialized audits, interactions with Data Protection Officers (DPOs), and access to informative materials about the LGPD (General Data Protection Law) are crucial in compensating for the lack of targeted guidelines. Developers expressed that having easy access to informative resources about the LGPD, including norms and techniques, is beneficial for the entire team. They also suggested that video tutorials and brochures would provide significant support, facilitating access to information, especially since LGPD-related issues are primarily addressed by compliance teams rather than the development team.</li>
+					</ul>
+				</li>
+                <li class="scope-title"><strong>International data processing</strong>
+					<ul class="item-group">
+						<li class="item-title"><strong>Description:</strong></li>
+						<li class="item-title2">This was an important challenge identified in the Systematic Literature Review (SLR), involving both a lack of awareness about the need to implement privacy in software and limited knowledge of existing legislation. While developers may have practical experience in privacy, they struggle to interpret legal requirements due to insufficient formal training on privacy and the LGPD.</li>
+						<li class="item-title"><strong>Solutions:</strong></li>
+						<li class="item-title2">Organizations have adopted specialized training programs and ongoing education for their development teams, which are crucial for ensuring compliance with the law and building a culture of privacy. A key solution is to establish a robust governance policy that includes regular training for all employees &#8212; especially new hires &#8212; on proper data handling practices and LGPD obligations.</li>
+					</ul>
+				</li>
+                <li class="scope-title"><strong>Changes in development stages</strong>
+					<ul class="item-group">
+						<li class="item-title"><strong>Description:</strong></li>
+						<li class="item-title2">Changes during the product development process are common, ranging from infrastructure growth and data expansion to adjustments aimed at enhancing compatibility. While these changes can be necessary, they increase technical complexity and require revisions of techniques that implement privacy in software. Balancing compliance with GDPR in a competitive data business environment is a noted challenge.</li>
+						<li class="item-title"><strong>Solutions:</strong></li>
+						<li class="item-title2">A proposed solution is the use of continuous software engineering, which allows for rapid updates and feedback, enabling quick corrections of non-compliance issues identified through feedback. Therefore, any software modifications necessitate proper monitoring of applicable laws and regular impact assessments. These assessments enable ongoing adjustments as the software evolves. Additionally, some developers indicated that hiring specialized legal consultants could aid in detecting sudden non-compliance.</li>
+					</ul>
+				</li>
+                <li class="scope-title"><strong>Budget constraints</strong>
+					<ul class="item-group">
+						<li class="item-title"><strong>Description:</strong></li>
+						<li class="item-title2">This is a common barrier that primarily affects organizations, with developers having little to no influence over it. Approximately one year after GDPR came into effect, studies showed that compliance with the law is costly and time-consuming, requiring ongoing financial and human resources that organizations often have in limited supply. There is a direct association between security operations and an increase in organizational budgets; thus, the level of data privacy and security is closely linked to the available capital. This challenge is particularly critical for small and medium-sized enterprises.</li>
+						<li class="item-title"><strong>Solutions:</strong></li>
+						<li class="item-title2">A proposed solution is to adopt a proactive privacy design, contrasting with solutions that link GDPR norms to commercial requirements. Some developers suggested utilizing open-source tools, especially those that are popular and robust in professional environments. This approach allows organizations to address immediate issues related to LGPD compliance, even if they cannot currently allocate significant capital to this area.</li>
+					</ul>
+				</li>
+                <li class="scope-title"><strong>Ethical vs. economic trade-off</strong>
+					<ul class="item-group">
+						<li class="item-title"><strong>Description:</strong></li>
+						<li class="item-title2">Organizations often face the challenge of balancing respect for privacy with prioritizing corporate freedom. Since a company's primary goal is economic, privacy and personal data protection may be deprioritized, even in the presence of compliance laws.</li>
+						<li class="item-title"><strong>Solutions:</strong></li>
+						<li class="item-title2">Organizations need to consider potential administrative penalties for non-compliance, as well as the long-term competitive disadvantage and loss of customer trust that can lead to financial losses. It is crucial to clearly present the intended use of data in terms of consent and to unlink individuals from their data whenever possible through anonymization. Finally, individuals should have the right to access, modify, and permanently delete their information upon request.</li>
+					</ul>
+				</li>
+                <li class="scope-title"><strong>Impact on application usability</strong>
+					<ul class="item-group">
+						<li class="item-title"><strong>Description:</strong></li>
+						<li class="item-title2">This issue is particularly relevant for small and medium-sized enterprises. If data processing capabilities are insufficient, implementing privacy and data protection frameworks can decrease system performance or hinder application usability.</li>
+						<li class="item-title"><strong>Solutions:</strong></li>
+						<li class="item-title2">It is advisable to employ specific frameworks as early as possible, during the application design process, to estimate and mitigate performance risks. A key mitigation technique is data minimization, which enhances the transparency of consent terms and reduces potential negative impacts on user experience. Consequently, organizing, processing, and cleaning data becomes easier, as stored information aligns with the necessity principle outlined in privacy regulations.</li>
+					</ul>
+				</li>
+                <li class="scope-title"><strong>User relationship</strong>
+					<ul class="item-group">
+						<li class="item-title"><strong>Description:</strong></li>
+						<li class="item-title2">Current privacy regulations grant users various rights &#8212; such as data portability, correction, and deletion &#8212; which actively influence how their personal data is processed. Studies have identified challenges in the relationship between users and organizations or developers, particularly regarding the consent process, as some users may be indifferent to privacy benefits. Developers also struggle to implement transparency through privacy policies and request systems, further complicating the situation.</li>
+						<li class="item-title"><strong>Solutions:</strong></li>
+						<li class="item-title2">Leading companies like Microsoft and Google have addressed these issues by providing self-service tools and privacy dashboards. Additionally, it is beneficial to involve users throughout the data processing, ensuring they are aware of and consent to the entire process, especially in usability testing that requires recording.</li>
+					</ul>
+				</li>
+                <li class="scope-title"><strong>Unassessed development process under the LGPD</strong>
+					<ul class="item-group">
+						<li class="item-title"><strong>Description:</strong></li>
+						<li class="item-title2">It is common for organizations not to have a culture focused on compliance with the LGPD. One of the main challenges is the need to modify the architecture of software that is already in production and was not designed with LGPD requirements in mind.</li>
+						<li class="item-title"><strong>Solutions:</strong></li>
+						<li class="item-title2">It is recommended to use established frameworks or create a new standard that ensures LGPD implementation from the outset of each project. Additionally, guides for mapping LGPD requirements are suggested to align these requirements with solutions within the development process.</li>
+					</ul>
+				</li>
+                <li class="scope-title"><strong>Projects lacking default privacy</strong>
+					<ul class="item-group">
+						<li class="item-title"><strong>Description:</strong></li>
+						<li class="item-title2">This issue is similar to the challenges associated with changes in development stages, but it specifically relates to the lack of consideration for privacy during the initial phase. Failures that violate the LGPD are often identified early in development and can be easily addressed; however, prevention is always preferable.</li>
+						<li class="item-title"><strong>Solutions:</strong></li>
+						<li class="item-title2">It is recommended to set the most restrictive privacy configurations as defaults, requiring no user intervention. A developer suggested using the Privacy by Design framework, as privacy by default is one of its fundamental principles. Integrating privacy from the beginning of development helps ensure that it is a core principle of the project, preventing unwanted penalties and reducing the need for rework.</li>
+					</ul>
+				</li>
+                <li class="scope-title"><strong>Constant changes in the law</strong>
+					<ul class="item-group">
+						<li class="item-title"><strong>Description:</strong></li>
+						<li class="item-title2">Given the requirement to comply with various complex regulations, the mapping and access to collected data must be even more stringent, and the software documentation should include all changes, even recent ones.</li>
+						<li class="item-title"><strong>Solutions:</strong></li>
+						<li class="item-title2">It is recommended that the organization have an effective Incident Response Plan (IRP) in place to minimize potential damage from any legislative changes that have not yet been implemented in the software. Additionally, it is crucial for the software to be continuously updated, with up-to-date project documentation, potentially linked to a version control process.</li>
+					</ul>
+				</li>
+			</ol>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p><a href="http://creativecommons.org/licenses/by/4.0/" rel="license"><img style="border-width: 0;" src="https://i.creativecommons.org/l/by/4.0/80x15.png" alt="Creative Commons License" /><br />
+        </a><br />
+            Unless otherwise stated, the contents are licensed under
+          <a href="http://creativecommons.org/licenses/by/4.0/" rel="license">Creative Commons Attribution 4.0 &#8211; International</a>. 
+          The authors are responsible for the choice and presentation of their texts on this site and for the opinions expressed. <a class="link" href="https://github.com/xDalle/5L2FGuide">Source</a>.</p>
+    </footer>
